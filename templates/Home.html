@@ -1,0 +1,113 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{%static 'css/normalize.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/home.css'%}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geno | Home</title>
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="{%url 'index'%}" class="logo">
+            <img
+              decoding="async"
+              src="{%static 'images/logo.png'%}"
+              alt="Logo"
+            />
+            <p>Geno</p>
+          </a>
+          {%if user.is_authenticated%}
+          <div class="welcome">
+            <p style="color: white; text-decoration: none">
+              Welcome {{user.username}}
+            </p>
+          </div>
+          <!-- <a
+            style="
+              text-decoration: none;
+              color: white;
+              background: transparent;
+              font-weight: bold;
+              font-size: 14px;
+              margin-right: 20px;
+            "
+            href="{%url 'password_change'%}"
+          >
+            Change Password</a
+          > -->
+          <a
+            style="
+              text-decoration: none;
+              color: white;
+              background: transparent;
+              font-weight: bold;
+              font-size: 14px;
+              margin-right: 20px;
+            "
+            href="{%url 'logout'%}"
+            >Log Out</a
+          >
+
+          {%endif%}
+        </nav>
+      </div>
+    </header>
+
+    <div class="line"></div>
+
+    <div class="text">
+      <p class="head">Welcome To Our Analysis Universe ...</p>
+      <p class="active">Choose Your Destination</p>
+    </div>
+
+    <section>
+      <div class="landing">
+        <button id="analysisBtn">Analysis</button>
+        <button class="down" onclick="window.location.href='detection.html'">
+          Detection
+        </button>
+        <button onclick="window.location.href='question1.html'">
+          Prediction
+        </button>
+      </div>
+
+      <div class="popup" id="popup">
+        <p>Which Side?</p>
+        <div class="btnss">
+          <button onclick="openhaploview()">HaploView</button>
+          <button onclick="openpopgene()">PopGene</button>
+
+          <div class="i">
+            <i class="fa-solid fa-x i" onclick="closePopup()"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{%static 'js/script.js'%}"></script>
+    <script src="{%static 'js/detection.js'%}"></script>
+    <script src="{%static 'js/prediction.js'%}"></script>
+    <script src="{%static 'js/haploview.js'%}"></script>
+    <script src="{%static 'js/popgene.js'%}"></script>
+  </body>
+</html>

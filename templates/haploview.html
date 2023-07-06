@@ -1,0 +1,104 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HaploView</title>
+    <link rel="stylesheet" href="{%static 'css/style_haploview.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="text">
+      <h1>HaploView</h1>
+      <!-- <div class="home">
+        <i class="fa-regular fa-house"></i>
+      </div> -->
+      <div class="icon">
+        <i class="fa-solid fa-question" id="help"></i>
+      </div>
+    </div>
+
+    <form id="myform">
+      <div id="popup">
+        <p style="text-align: center">Please wait while analyzing your file</p>
+        <span class="loader"></span>
+      </div>
+
+      <div class="container">
+        <input type="file" id="file" accept=".csv" required />
+        <label for="file">
+          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+          &nbsp; Choose File To Upload
+        </label>
+        <div id="num-of-files">No File Choosen</div>
+        <ul id="files-list"></ul>
+        <div class="btn">
+          <button id="file" type="submit">Upload</button>
+        </div>
+      </div>
+      <div class="note">
+        <p>Accept .csv file only</p>
+      </div>
+    </form>
+
+    <div class="img">
+      <img src="../static/images/111.png" alt="" srcset="" />
+    </div>
+
+    <script src="{%static 'js/script_haploview.js'%}"></script>
+    <script>
+      const form = document.getElementById("myform");
+      const button = document.getElementById("file");
+
+      function showPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+
+      function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        showPopup();
+        button.disabled = true;
+        const file = document.getElementById("file").files[0];
+        const formData = new FormData();
+        formData.append("file", file);
+
+        fetch("http://127.0.0.1:3193/upload_haplo", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const responseData = data;
+            console.log(responseData);
+            hidePopup();
+            button.disabled = false;
+            window.location.href = `http://127.0.0.1:8080/geneAnalysis/${responseData}`; // Redirects to example.com
+          })
+
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    </script>
+  </body>
+</html>

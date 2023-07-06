@@ -1,0 +1,202 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geno</title>
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" />
+    <link rel="stylesheet" href="{%static 'css/normalize.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/all.min.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/index.css'%}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!-- Start Header     -->
+    <header>
+      <div class="container" id="home">
+        <a href="{%url 'index'%}" class="logo">
+          <img src="{%static 'images/logo.png'%}" alt="logo" />
+        </a>
+        <p style="color: white">Geno</p>
+        <nav>
+          <i class="fas fa-bars toggle"></i>
+          <ul>
+            <li><a class="active" href="{%url 'index'%}">Home</a></li>
+            <li><a href="{%url 'login'%}">Login</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#footer">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header     -->
+
+    <!-- Start Landing     -->
+    <div class="landing">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="{%static 'images/1.jpg'%}" style="width: 100%" />
+        </div>
+
+        <div class="mySlides fade">
+          <img src="{%static 'images/3.jpeg'%}" style="width: 100%" />
+        </div>
+
+        <div class="mySlides fade">
+          <img src="{%static 'images/2.jpeg'%}" style="width: 100%" />
+        </div>
+      </div>
+
+      <div class="overlay"></div>
+      <div class="text">
+        <div class="content">
+          <p>
+            Is a bioinformatics website helps students and researchers <br />
+            to make Analysis , Detection and Prediction on biological data
+          </p>
+          <button id="btn" href="{%url 'register'%}">Get Started</button>
+        </div>
+      </div>
+    </div>
+    <!-- End Landing     -->
+
+    <!-- Start Services     -->
+    <div class="services" id="services">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Services</h2>
+          <p>
+            Bioinformatics tool to compute and analysis biological data, detect
+            SNPs or mutation of some diseases and prediction genetic disorder
+          </p>
+        </div>
+        <div class="services-container">
+          <div class="srv-box">
+            <i class="fa-solid fa-dna fa-3x"></i>
+            <div class="text">
+              <h3>Prediction</h3>
+              <p>
+                Prediction on genetic disorder predict is the person will be
+                affected by genetic disorder or not and the type of genetic
+                disorder (single - gene disorder , chromosomal disorder ,
+                complex disorder) and its genetic subclass
+              </p>
+            </div>
+          </div>
+
+          <div class="srv-box">
+            <i class="fa-solid fa-chart-simple fa-3x"></i>
+            <div class="text">
+              <h3>Analysis</h3>
+              <p>
+                Responsible for population genetic analysis to compute summary
+                statics including allele frequency and allele number .. etc
+                provide computation of linkage disequilibrium statics shows some
+                basics data quality checks for the markers and represented in
+                the form is graph
+              </p>
+            </div>
+          </div>
+
+          <div class="srv-box">
+            <i class="fa-solid fa-magnifying-glass fa-3x"></i>
+            <div class="text">
+              <h3>Detection</h3>
+              <p>
+                Detects if SNPs ( single nucleotide polymorphism ) in a genome
+                influence disease and the place of the SNP we have four diseases
+                (Systemic Lupus Erythematosus - Multiple Sclerosis - Migraine -
+                Epilepsy )
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Services     -->
+
+    <footer class="footer" id="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            href="https://www.facebook.com"
+            target="_blank"
+          >
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            href="https://www.twitter.com"
+            target="_blank"
+          >
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            href="https://www.linkedin.com"
+            target="_blank"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a
+            class="social-icon__link"
+            href="https://www.instagram.com"
+            target="_blank"
+          >
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" href="{%url 'index'%}">Home</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#footer">About</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#services">Services</a>
+        </li>
+      </ul>
+      <p>&copy;2023 Geno | All Rights Reserved</p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="{%static 'js/slide.js'%}"></script>
+  </body>
+</html>

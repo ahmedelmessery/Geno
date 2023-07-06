@@ -1,0 +1,332 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detection</title>
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" />
+    <link rel="stylesheet" href="{%static 'css/question1.css'%}" />
+    <link rel="stylesheet" href="https://fontawesome.com/icons" />
+    <link rel="stylesheet" href="{%static 'css/all.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/all.min.css'%}" />
+  </head>
+
+  <body>
+    <div class="landing">
+      <div class="popup">
+        <div class="popup-content">
+          {%if result1 == 0%}
+          <div class="main">
+            <p>There are Mitochondrial genetic inheritance disorders.</p>
+          </div>
+
+          {%elif result1 == 1%}
+          <div class="main">
+            <p>There are Multifactorial genetic inheritance disorders.</p>
+          </div>
+
+          {%elif result1 == 2%}
+          <div class="main">
+            <p>There are Single-gene inheritance disorders.</p>
+          </div>
+
+          {%elif result1 == 3%}
+          <div class="main">
+            <p>There are not any disorders.</p>
+          </div>
+
+          {%endif%} {%if result2 == 0%}
+          <div class="row">
+            <div class="text">
+              <h3>May lead to Alzheimer's.</h3>
+              <p>
+                Alzheimer you should : <br />
+                1. Exercise regularly<br />
+
+                2. Eat a healthy diet<br />
+
+                3. Stay mentally active<br />
+
+                4. Get enough sleep<br />
+
+                5. Manage stress.<br />
+
+                6. Stay socially active.<br />
+
+                These tests are important <br />
+
+                1. Cognitive testing<br />
+
+                2. Brain imaging<br />
+
+                3. Genetic testing<br />
+
+                4. Blood tests<br />
+
+                . It’s best to talk to a healthcare provider about which tests
+                may be appropriate for you.
+              </p>
+            </div>
+
+            <div class="image">
+              <img src="static\photos\Zahimer.JPG" />
+            </div>
+          </div>
+
+          <div class="btn">
+            <button onclick="window.location.href='home/question1.html'">
+              Try Another Prediction
+            </button>
+          </div>
+
+          {%elif result2 == 1%}
+          <div class="row">
+            <div class="text">
+              <h3>May lead to Cancer.</h3>
+              <p>
+                Cancer is the most common human genetic disease.<br />
+                The transition from a normal cell to a malignant cancer is
+                driven by changes to a cell’s DNA, also known as mutations.<br />
+                If these mutations occur in genes that control growth
+                (proto-oncogenes and tumor suppressor genes) uncontrolled cell
+                growth can occur,<br />
+                which can lead to tumor formation and cancer<br />
+                Consider these lifestyle tips to help prevent cancer.<br />
+                1. Don’t use tobacco 2.<br />
+                Eat a healthy diet <br />3. Maintain a healthy weight and be
+                physically active<br />
+                4. Protect yourself from the sun <br />5. Get vaccinated<br />
+                6. Get regular medical care
+              </p>
+            </div>
+
+            <div class="image">
+              <img src="static\photos\Cancer2.PNG" />
+            </div>
+          </div>
+
+          <div class="btn">
+            <button onclick="window.location.href='home/question1.html'">
+              Try Another Prediction
+            </button>
+          </div>
+
+          {%elif result2 == 2%}
+          <div class="row">
+            <div class="text">
+              <h3>May lead to Cystic fibrosis.</h3>
+              <
+              <p>
+                Cystic fibrosis (CF) is a genetic disorder that affects the
+                respiratory, digestive, and reproductive systems. <br />
+                Treatment may include:<br />
+                Medications <br />Nutritional support, including a high-calorie
+                diet <br />Exercise and airway clearance techniques<br />
+                Lung transplant in severe cases <br />
+                Early diagnosis and treatment of CF is important for
+                improving<br />
+                outcomes and quality of life.
+              </p>
+            </div>
+
+            <div class="image">
+              <img src="static\photos\Cystic fibrosis1.PNG" />
+            </div>
+          </div>
+
+          <div class="btn">
+            <button onclick="window.location.href='home/question1.html'">
+              Try Another Prediction
+            </button>
+          </div>
+
+          {%elif result2 == 3%}
+          <div class="row">
+            <div class="text">
+              <h3>May lead to Diabetes.</h3>
+              <p>
+                To avoid Diabetes we should: <br />
+                • Following a healthy eating plan. <br />
+                • Get regular exercise. <br />
+                It is recommended that a person conduct a diabetes test
+                regularly, according to risk factors that may increase the
+                possibility of developing the disease, such as age, weight.
+              </p>
+            </div>
+
+            <div class="image">
+              <img src="static\photos\diabetes.png" />
+            </div>
+          </div>
+
+          <div class="btn">
+            <button onclick="window.location.href='home/question1.html'">
+              Try Another Prediction
+            </button>
+          </div>
+        </div>
+
+        {%elif result2 == 4%}
+        <div class="row">
+          <div class="text">
+            <h3>May lead to Hemochromatosis.</h3>
+            <p>
+              Hemochromatosis is a genetic disorder that causes the body to<br />
+              absorb too much iron from the diet<br />
+              Symptoms of hemochromatosis can vary but may include:<br />
+              • Fatigue <br />• Joint pain <br />• Abdominal pain<br />
+              • Loss of sex drive<br />
+              • Impotence in men <br />• Irregular periods or absent periods in
+              women <br />• Darkening of the skin <br />• Liver disease <br />•
+              Diabetes
+            </p>
+          </div>
+
+          <div class="image">
+            <img src="static\photos\Hemochromatosis2.JPG" />
+          </div>
+        </div>
+
+        <div class="btn">
+          <button onclick="window.location.href='home/question1.html'">
+            Try Another Prediction
+          </button>
+        </div>
+
+        {%elif result2 == 5%}
+        <div class="row">
+          <div class="text">
+            <h3>May lead to Leber's Hereditary Optic Neuropathy.</h3>
+            <p>
+              To avoid LHON we should: <br />
+              you can reduce the risk of developing the condition or to slow
+              its<br />
+              progression if you do have it: Genetic counseling: If you have
+              a<br />
+              family history of LHON, genetic counseling can help you
+              understand<br />
+              your risk of developing the condition and provide guidance on
+              how<br />
+              to manage it.
+            </p>
+          </div>
+
+          <div class="image">
+            <img src="static\photos\lebers.jpeg" />
+          </div>
+        </div>
+
+        <div class="btn">
+          <button onclick="window.location.href='home/question1.html'">
+            Try Another Prediction
+          </button>
+        </div>
+
+        {%elif result2 == 6%}
+        <div class="row">
+          <div class="text">
+            <h3>May lead to Leigh syndrome.</h3>
+            <p>
+              Leigh syndrome: <br />There are some steps that can be taken to
+              manage the symptoms of<br />
+              Leigh syndrome and improve quality of life for those affected:<br />
+              1. Early diagnosis: Early diagnosis and treatment can help to
+              manage<br />
+              the symptoms of Leigh syndrome and improve outcomes. <br />2.
+              Symptom management: Treatment may involve managing<br />
+              symptoms such as seizures, breathing difficulties, and feeding<br />
+              problems.
+            </p>
+          </div>
+
+          <div class="image">
+            <img src="static\photos\Leigh syndrome .JPG" />
+          </div>
+        </div>
+
+        <div class="btn">
+          <button onclick="window.location.href='home/question1.html'">
+            Try Another Prediction
+          </button>
+        </div>
+        {%elif result2 == 7%}
+        <div class="row">
+          <div class="text">
+            <h3>May lead to Mitochondrial myopathies.</h3>
+            <p>
+              Mitochondrial myopathies are forms of mitochondrial disease<br />
+              that cause prominent muscle problems are caused by mutations<br />
+              in the body’s nuclear DNA or by mutations or deletions in the
+              body’s<br />
+              mitochondrial DNA Treatments may include<br />
+              1. Medication to control or prevent symptoms such as nausea,
+              seizures and heart problems <br />2. Respiratory support <br />3.
+              Physical, occupational or speech therapy
+            </p>
+          </div>
+
+          <div class="image">
+            <img src="static\photos\Mitochondrial myopathies2.jpg" />
+          </div>
+        </div>
+
+        <div class="btn">
+          <button onclick="window.location.href='home/question1.html'">
+            Try Another Prediction
+          </button>
+        </div>
+
+        {%elif result2 == 8%}
+        <div class="row">
+          <div class="text">
+            <p>May lead to Tay-Sachs.</p>
+            <p>
+              Tay-Sachs disease is a rare inherited condition that mainly
+              affects<br />
+              babies and young children. It stops the nerves working properly<br />
+              and is usually fatal caused by a problem in a child’s genes that
+              means<br />
+              their nerves stop working properly. A child can only have it if
+              both parents have this faulty gene<br />
+              Treatments may include:<br />
+              1. Medicines for seizures and stiffness <br />2. Speech and
+              language therapy for feeding and swallowing problems <br />
+              sometimes special bottles or a feeding tube may be needed<br />
+              3. Physiotherapy to help with stiffness and improve coughing
+              (to<br />
+              reduce the risk of pneumonia)
+            </p>
+          </div>
+
+          <div class="image">
+            <img src="static\photos\Tay-Sachs2.JPG" />
+          </div>
+        </div>
+
+        <div class="btn">
+          <button onclick="window.location.href='home/question1.html'">
+            Try Another Prediction
+          </button>
+        </div>
+
+        {%elif result2 == 9%}
+        <div class="row">
+          <div class="text">
+            <h3>May lead to no diseases.</h3>
+          </div>
+        </div>
+
+        <div class="btn">
+          <button onclick="window.location.href='home/question1.html'">
+            Try Another Prediction
+          </button>
+        </div>
+
+        {%endif%}
+      </div>
+    </div>
+    <script src="{%static 'js/geno_prediction.js'%}"></script>
+  </body>
+</html>

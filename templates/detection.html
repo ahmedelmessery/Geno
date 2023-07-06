@@ -1,0 +1,124 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detection</title>
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" />
+    <link rel="stylesheet" href="{%static 'css/detection.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/all.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/all.min.css'%}" />
+  </head>
+
+  <body>
+    <div class="landing">
+      <!-- <header>
+        <div class="container">
+          <nav>
+            <a href="{%url 'home'%}" class="logo">
+              <img
+                decoding="async"
+                src="{%static 'images/logo.png'%}"
+                alt="Logo"
+              />
+              <p>Geno</p>
+            </a>
+
+          </nav>
+        </div>
+      </header> -->
+
+      <div class="head">
+        <h1>Detection</h1>
+      </div>
+      <div class="form">
+        <div class="form-content">
+          <div class="inp">
+            <!-- <input type="radio" id="systemic" name="r"> -->
+            <label for="systemic">Systemic Lupus Erythematosus</label>
+            <span></span>
+          </div>
+          <!-- <div class="inp">
+					<input type="radio" id="Migraine" name="r">
+					<label for="Migraine">Migraine</label>
+				</div>
+				<div class="inp">
+					<input type="radio" id="Epilepsy" name="r">
+					<label for="Epilepsy">Epilepsy</label>
+				</div> -->
+          <form action="{% url 'geno_detection'%}" method="post">
+            <div class="textt">
+              {% csrf_token %}
+              <textarea
+                type="text"
+                name="dna_sequence"
+                placeholder="Enter Sequence...."
+              ></textarea>
+            </div>
+
+            <div>
+              <button id="btn">Confirm</button>
+            </div>
+          </form>
+        </div>
+        <div id="back-icon">
+          <i class="fa-solid fa-house" onclick="window.location.href='./'"></i>
+        </div>
+      </div>
+
+      <span class="gif">
+        <img src="https://i.ibb.co/0j142yY/loading.gif" alt="loading" />
+      </span>
+
+      {%if result == 'Diseased'%}
+
+      <div id="myPopup" class="popup">
+        <div class="popup-content">
+          <img
+            src="static\photos\sad.png"
+            width="200"
+            height="200"
+            alt="sad emoji"
+          />
+          <p id="Diseased">Diseased</p>
+          <a id="try" href="home/detection.html">Try Another Sequence.</a>
+        </div>
+      </div>
+
+      {%elif result == 'Not Diseased'%}
+      <div id="myPopup" class="popup">
+        <div class="popup-content">
+          <img
+            src="static\photos\happy.png"
+            width="200"
+            height="200"
+            alt="sad emoji"
+          />
+          <p id="not">Not Diseased</p>
+          <a id="try" href="home/detection.html">Try Another Sequence.</a>
+        </div>
+      </div>
+
+      {%elif result == 'This is not a DNA Sequence'%}
+
+      <div id="myPopup" class="popup">
+        <div class="popup-content">
+          <img
+            src="static\photos\sad.png"
+            width="200"
+            height="200"
+            alt="sad emoji"
+          />
+          <p id="Diseased">This is not a DNA Sequence.</p>
+          <a id="try" href="home/detection.html">Try Another Sequence.</a>
+        </div>
+      </div>
+
+      {%endif%}
+    </div>
+
+    <script src="{%static 'js/detection.js'%}"></script>
+  </body>
+</html>

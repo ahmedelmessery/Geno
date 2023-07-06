@@ -1,0 +1,170 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: white;
+}
+.container {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 34.37em;
+  position: relative;
+  margin: 3.12em auto;
+  padding: 7.12em 1.25em;
+  border-radius: 0.43em;
+  box-shadow: 0 1.25em 2.18em rgb(1, 28, 71, 0.3);
+}
+input[type="file"] {
+  display: none;
+}
+label {
+  display: block;
+  position: relative;
+  background-color: #30ccf4;
+  color: #ffffff;
+  font-size: 1.12em;
+  font-weight: 500;
+  text-align: center;
+  width: 18.75em;
+  padding: 1.12em 0;
+  margin: auto;
+  border-radius: 0.31em;
+  cursor: pointer;
+}
+#num-of-files {
+  font-weight: 400;
+  text-align: center;
+  margin: 1.25em 0 1.87em 0;
+}
+ul {
+  list-style-type: none;
+}
+.container li {
+  font-weight: 500;
+  background-color: #eff5ff;
+  color: #30ccf4;
+  margin-bottom: 1em;
+  padding: 1.1em 1em;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn button {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: white;
+  color: #30ccf4;
+  border: 1px solid#30ccf4;
+  transition: 0.3s;
+}
+
+.btn button:hover {
+  background-color: #30ccf4;
+  color: white;
+  border: 1px solid #30ccf4;
+}
+
+.text {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.text i {
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.text i:hover {
+  color: #30ccf4;
+}
+
+.text .icon:hover::before {
+  display: block;
+}
+
+.text .icon::before {
+  content: "Upload the file which contains expected values for each column:\A
+  Site: The name or identifier of the site (e.g., Ale)\A
+  ID: The unique identifier for each entry (e.g., Ale04)\A
+  Locus: The locus or location of the genetic data (e.g., 3441)\A
+  Genotype: The genotype information for each entry (e.g., GG, NA, AA)";
+  font-size: 12px;
+  width: 250px;
+  position: absolute;
+  display: none;
+  top: 7%;
+  right: 10%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.note {
+  text-align: center;
+}
+
+.note p {
+  color: red;
+}
+
+#popup {
+  text-align: center;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.loader {
+  margin-top: 10px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #30ccf4;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.img img {
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+  .img img {
+    display: none;
+  }
+}

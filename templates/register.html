@@ -1,0 +1,140 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{%static 'css/normalize.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up for Geno</title>
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" />
+  </head>
+
+  <body>
+    <div class="landing_login">
+      <div class="audio">
+        <i class="fa-solid fa-volume-high"></i>
+      </div>
+
+      <audio id="audio" src="{%static 'audio.mp3'%}" autoplay loop></audio>
+
+      <div class="landing_logo">
+        <img src="{%static 'images/logo.png'%}" alt="" />
+        <p><span style="color: #43d8ff">G</span>eno</p>
+      </div>
+
+      <div class="text">
+        <p id="register">REGISTER</p>
+      </div>
+
+      <div class="input">
+        <form method="post" novalidate="" onsubmit="return check()">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              maxlength="254"
+              class="form-control"
+              id="id_email"
+              required=""
+              onkeyup="ValidateEmail()"
+            />
+            <span id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              maxlength="150"
+              class="form-control"
+              required=""
+              id="id_username"
+              onkeyup="ValidateUsername()"
+            />
+            <span id="username-error"></span>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              name="password1"
+              placeholder="Password"
+              autocomplete="new-password"
+              class="form-control"
+              required=""
+              id="id_password1"
+              aria-autocomplete="list"
+              onkeyup="ValidatePassword()"
+            />
+            <span id="password-error"></span>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              name="password2"
+              placeholder="Confirm Password"
+              autocomplete="new-password"
+              class="form-control"
+              required=""
+              id="id_password2"
+              placeholder="Confirm Password"
+              onkeyup="ValidatePasswordConfirmation()"
+            />
+            <span id="Rpassword-error"></span>
+          </div>
+
+          <div class="login_botton">
+            <button
+              type="submit"
+              id="register_btn"
+              class="btn"
+              onclick="check()"
+            >
+              Register
+            </button>
+            <span id="fix"></span>
+          </div>
+        </form>
+      </div>
+
+      <div class="p">
+        <p>Or Sign up With</p>
+      </div>
+
+      <div class="icons" style="margin: 0 -10px">
+        <img src="{%static 'images/facebook.png'%}" alt="" />
+        <img src="{%static 'images/google.png'%}" alt="" />
+        <img id="twitter" src="{%static 'images/twiter.png'%}" alt="" />
+      </div>
+
+      <div class="text" id="login-now">
+        <p>Already have an account?<a href="{%url 'login'%}"> Log In Now</a></p>
+      </div>
+
+      <video src="{%static 'images/dna.mp4'%}" muted loop autoplay></video>
+    </div>
+
+    <script src="{%static 'js/register.js'%}"></script>
+    <script src="{%static 'js/registererror.js'%}"></script>
+  </body>
+</html>
